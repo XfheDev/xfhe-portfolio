@@ -1,43 +1,57 @@
-// Navbar Scroll Effect
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Reveal animations on scroll
+// Smooth Reveal for Bento Items
 const observerOptions = {
-    threshold: 0.1
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
+    entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
+            // Add a slight delay based on index for a staggered effect
+            setTimeout(() => {
+                entry.target.classList.add('reveal');
+            }, index * 50);
         }
     });
 }, observerOptions);
 
-// Select elements to reveal
-document.querySelectorAll('section:not(.hero) .container').forEach(el => {
+// Initialize bento items for animation
+document.querySelectorAll('.bento-item').forEach(el => {
     el.style.opacity = "0";
-    el.style.transform = "translateY(30px)";
-    el.style.transition = "all 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
+    el.style.transform = "translateY(20px)";
+    el.style.transition = "all 0.8s cubic-bezier(0.23, 1, 0.32, 1)";
     observer.observe(el);
 });
 
-// Card Hover Glow Effect (Optional - adds a dynamic touch)
-document.querySelectorAll('.card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        card.style.setProperty('--mouse-x', `${x}px`);
-        card.style.setProperty('--mouse-y', `${y}px`);
-    });
+// Update the reveal class styles dynamically
+const style = document.createElement('style');
+style.textContent = `
+    .reveal {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+`;
+document.head.appendChild(style);
+
+// Subtle Parallax for Aurora
+window.addEventListener('mousemove', (e) => {
+    const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+    const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+    
+    const aurora = document.querySelector('.aurora');
+    if (aurora) {
+        aurora.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${window.scrollY * 0.05}deg)`;
+    }
+});
+
+// Navbar background blur on scroll
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.nav-container');
+    if (window.scrollY > 20) {
+        nav.style.background = "rgba(10, 10, 12, 0.85)";
+        nav.style.padding = "0.4rem 1.2rem";
+    } else {
+        nav.style.background = "rgba(10, 10, 12, 0.7)";
+        nav.style.padding = "0.5rem 1.5rem";
+    }
 });

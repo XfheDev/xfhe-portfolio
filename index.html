@@ -8,13 +8,6 @@
     <meta name="description"
         content="Personal portfolio of XfheDev. Specialist in Software Engineering, Hardware/Embedded Systems, and Creative Design.">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Outfit:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
-
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -22,13 +15,15 @@
 </head>
 
 <body>
+    <!-- Decorative Elements -->
+    <div class="noise-overlay"></div>
+    <div class="aurora"></div>
 
     <nav id="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo">XFHE<span class="gradient-text">.DEV</span></a>
+        <div class="nav-container">
+            <a href="#" style="text-decoration: none; font-weight: 800; color: white;">XFHE</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -37,157 +32,88 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <span class="hero-tagline">// INITIALIZING PORTFOLIO_V1.0</span>
-                    <h1>Bridging <span class="gradient-text">Hardware</span> and <span
-                            class="gradient-text">Software</span></h1>
-                    <p>I am XfheDev, a developer focused on building high-performance software, robust embedded systems,
-                        and immersive digital experiences.</p>
-                    <div class="cta-group">
-                        <a href="#projects" class="btn btn-primary">View Projects</a>
-                        <a href="#contact" class="btn btn-outline">Get In Touch</a>
-                    </div>
-                </div>
+        <section class="hero container">
+            <div class="hero-badge">Available for new projects</div>
+            <h1>Creating <br> <span class="gradient-text">Future Systems</span></h1>
+            <p>I build high-performance software and robust hardware solutions. Specialized in C++, Embedded Systems, and Modern Web Architectures.</p>
+            <div class="cta-group">
+                <a href="#projects" class="btn btn-primary">See My Work</a>
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- Main Bento Section -->
         <section id="about" class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
-                <div>
-                    <p style="font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2rem;">
-                        My journey in technology spans from the lowest levels of hardware abstraction to high-level
-                        application architecture. I believe that the best software is built with a deep understanding of
-                        the silicon it runs on.
-                    </p>
-                    <p style="font-size: 1.1rem; color: var(--text-dim);">
-                        Whether it's optimizing a C++ kernel, designing a complex web interface with TypeScript, or
-                        crafting 3D assets in Blender, I strive for efficiency, reliability, and clean implementation in
-                        everything I build.
-                    </p>
-                </div>
-                <div class="card"
-                    style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;">
-                    <i class="fas fa-microchip"
-                        style="font-size: 3rem; color: var(--primary-color); margin-bottom: 1.5rem;"></i>
-                    <h3 class="mono">SYSTEM_READY</h3>
-                    <p>Continuously exploring the boundaries between physical and digital worlds.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" style="background: var(--surface-color);">
-            <div class="container">
-                <h2 class="section-title">Technical Arsenal</h2>
-                <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Software</h4>
-                        <ul class="skill-list">
-                            <li class="skill-item">C / C++ / C#</li>
-                            <li class="skill-item">TypeScript / JS</li>
-                            <li class="skill-item">Node.js</li>
-                            <li class="skill-item">Python</li>
-                        </ul>
+            <div class="bento-grid">
+                <!-- About Me -->
+                <div class="bento-item large project-card">
+                    <div>
+                        <div class="icon"><i class="fas fa-terminal"></i></div>
+                        <h3>The Developer</h3>
+                        <p>Bridging the gap between physical hardware and digital logic. I believe in clean code, efficient algorithms, and the power of silicon.</p>
                     </div>
-                    <div class="skill-category">
-                        <h4>Hardware</h4>
-                        <ul class="skill-list">
-                            <li class="skill-item">Arduino / ESP32</li>
-                            <li class="skill-item">RPi Pico</li>
-                            <li class="skill-item">Embedded C</li>
-                            <li class="skill-item">IoT Systems</li>
-                        </ul>
+                    <div class="skill-chips">
+                        <span class="chip">C++</span>
+                        <span class="chip">C#</span>
+                        <span class="chip">TypeScript</span>
+                        <span class="chip">Embedded</span>
+                        <span class="chip">IoT</span>
+                        <span class="chip">Unreal</span>
+                        <span class="chip">Blender</span>
                     </div>
-                    <div class="skill-category">
-                        <h4>Creative & Tools</h4>
-                        <ul class="skill-list">
-                            <li class="skill-item">Unreal Engine</li>
-                            <li class="skill-item">Blender 3D</li>
-                            <li class="skill-item">Git / GitHub</li>
-                            <li class="skill-item">Linux Systems</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="container">
-            <h2 class="section-title">Selected Works</h2>
-            <div class="grid">
-                <!-- Project 1 -->
-                <div class="card">
-                    <div class="tech-tags" style="margin-bottom: 1rem;">
-                        <span class="tag">C++</span>
-                        <span class="tag">System</span>
-                    </div>
-                    <h3>GhostProcess</h3>
-                    <p>A sophisticated process management and monitoring tool focused on system transparency and
-                        performance.</p>
-                    <a href="https://github.com/XfheDev/GhostProcess" target="_blank"
-                        style="color: var(--primary-color); text-decoration: none; font-weight: 600;">View Repository <i
-                            class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i></a>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="card">
-                    <div class="tech-tags" style="margin-bottom: 1rem;">
-                        <span class="tag">React</span>
-                        <span class="tag">Education</span>
+                <!-- Featured Project 1 -->
+                <div class="bento-item wide project-card">
+                    <div>
+                        <h3>GhostProcess</h3>
+                        <p>Low-level process monitoring and management tool built for high performance.</p>
                     </div>
-                    <h3>KimyaLAB</h3>
-                    <p>An interactive chemistry simulation platform designed to make learning science engaging and
-                        accessible through web technologies.</p>
-                    <a href="https://github.com/XfheDev/KimyaLAB" target="_blank"
-                        style="color: var(--primary-color); text-decoration: none; font-weight: 600;">View Repository <i
-                            class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i></a>
+                    <a href="https://github.com/XfheDev/GhostProcess" class="link">View Project <i class="fas fa-arrow-right"></i></a>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="card">
-                    <div class="tech-tags" style="margin-bottom: 1rem;">
-                        <span class="tag">Algorithms</span>
-                        <span class="tag">Problem Solving</span>
+                <!-- Location/Status -->
+                <div class="bento-item project-card">
+                    <div class="icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Status</h3>
+                    <p>System Online. <br> Exploring Embedded AI.</p>
+                </div>
+
+                <!-- Socials -->
+                <div class="bento-item project-card" style="justify-content: center; align-items: center; gap: 1.5rem; flex-direction: row;">
+                    <a href="https://github.com/XfheDev" class="icon" style="margin: 0;"><i class="fab fa-github"></i></a>
+                    <a href="https://twitter.com/xfhe99" class="icon" style="margin: 0;"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/xfhe99" class="icon" style="margin: 0;"><i class="fab fa-instagram"></i></a>
+                </div>
+
+                <!-- Featured Project 2 -->
+                <div class="bento-item wide project-card">
+                    <div>
+                        <h3>KimyaLAB</h3>
+                        <p>Interactive web platform for chemistry education and simulations.</p>
                     </div>
-                    <h3>LeetCode Solutions</h3>
-                    <p>A collection of optimized solutions to complex algorithmic challenges, demonstrating clean code
-                        and efficient logic.</p>
-                    <a href="https://github.com/XfheDev/leetcode" target="_blank"
-                        style="color: var(--primary-color); text-decoration: none; font-weight: 600;">View Repository <i
-                            class="fas fa-external-link-alt" style="font-size: 0.8rem;"></i></a>
+                    <a href="https://github.com/XfheDev/KimyaLAB" class="link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Algorithm -->
+                <div class="bento-item project-card">
+                    <h3>LeetCode</h3>
+                    <p>600+ problems solved. Optimized logic.</p>
+                    <a href="https://github.com/XfheDev/leetcode" class="link">Explore <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" style="background: var(--bg-color); border-top: 1px solid var(--glass-border);">
-            <div class="container contact-container">
-                <h2 style="font-size: 3rem; margin-bottom: 1.5rem;">Let's Build Something <span
-                        class="gradient-text">Exceptional</span></h2>
-                <p style="color: var(--text-dim); margin-bottom: 3rem;">I'm always open to discussing new projects,
-                    creative ideas, or opportunities to be part of your vision.</p>
-                <a href="mailto:xfhe8170@gmail.com" class="btn btn-primary"
-                    style="padding: 1.2rem 3rem; font-size: 1.1rem;">Email Me</a>
-
-                <div class="social-links">
-                    <a href="https://github.com/XfheDev" class="social-icon" target="_blank"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/xfhe99" class="social-icon" target="_blank"><i
-                            class="fab fa-twitter"></i></a>
-                    <a href="https://instagram.com/xfhe99" class="social-icon" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+        <section id="contact" class="container" style="text-align: center;">
+            <h2 style="font-size: 3.5rem; margin-bottom: 1.5rem;">Let's talk <span class="gradient-text">technology</span>.</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 3rem;">Ready to bring your hardware or software vision to life.</p>
+            <a href="mailto:xfhe8170@gmail.com" class="btn btn-primary" style="padding: 1.2rem 4rem;">Get in Touch</a>
         </section>
     </main>
 
-    <footer style="padding: 3rem 0; text-align: center; border-top: 1px solid var(--glass-border);">
-        <p style="color: var(--text-dim); font-size: 0.8rem; font-family: 'JetBrains Mono', monospace;">
-            &copy; 2024 XfheDev. All systems operational.
+    <footer class="container" style="padding: 4rem 2rem; border-top: 1px solid var(--border-color); text-align: center;">
+        <p style="color: var(--text-secondary); font-size: 0.9rem; font-family: 'JetBrains Mono', monospace;">
+            &copy; 2024 XFHE.DEV // BUILT FOR THE FUTURE
         </p>
     </footer>
 
